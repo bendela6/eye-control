@@ -1,0 +1,4 @@
+@mixin btn-size($size) {
+  font-size: map-get($btn-sizes, $size);
+  padding: map-get($btn-paddings, $size);
+}

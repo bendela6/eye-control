@@ -1,0 +1,65 @@
+.btn {
+  display: inline-block;
+  padding: .5rem .75rem;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  background-color: transparent;
+  font-weight: 600;
+  letter-spacing: .0625rem;
+
+  text-align: center;
+  cursor: pointer;
+
+  @each $size, $value in $btn-sizes {
+    &-#{$size} {
+      @include btn-size($size);
+    }
+  }
+
+  @each $color, $value in $colors {
+    &-#{$color} {
+      border-color: $value;
+      color: $value;
+
+      &:hover:not(:disabled):not(.disabled) {
+        background-color: lighten($value, 10%);
+        border-color: lighten($value, 10%);
+        color: #FFF;
+      }
+
+      &.active,
+      &.active:hover,
+      {
+        background-color: $value;
+        border-color: $value;
+        color: #FFF;
+      }
+
+      &:disabled,
+      &.disabled {
+        user-select: none;
+        opacity: .5;
+        cursor: default;
+      }
+    }
+  }
+
+  &-group {
+    display: flex;
+
+    & > .btn {
+      display: block;
+    }
+
+    & > .btn:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left: 0;
+    }
+
+    & > .btn:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}

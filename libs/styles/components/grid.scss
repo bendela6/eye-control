@@ -1,0 +1,12 @@
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex: 0 0 calc(100% / 12 * #{$i});
+    max-width: calc(100% / 12 * #{$i});
+    padding: 0 15px;
+  }
+  .offset-#{$i} {
+    margin-left: calc(100% / 12 * #{$i});
+  }
+}
+
+

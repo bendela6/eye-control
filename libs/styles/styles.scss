@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import './reset';
+@import './utils';
+@import './variables';
+@import './mixins';
+@import './components/buttons';
+@import './components/cards';
+@import './components/flex';
+@import './components/fonts';
+@import './components/grid';
+@import './components/forms';
+@import './components/notifications';
+@import './components/texts';
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  background-color: $grey-200;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+@each $size, $value in $spacers {
+  @each $side, $directions in $sides {
+    .m#{$side}-#{$size} {
+      @each $direction in $directions {
+        margin#{$direction}: $value;
+      }
+    }
+
+    .p#{$side}-#{$size} {
+      @each $direction in $directions {
+        padding#{$direction}: $value;
+      }
+    }
+  }
+}
+
+

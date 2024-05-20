@@ -1,0 +1,39 @@
+.card {
+  background-color: #FFF;
+  border-radius: map-get($spacers, 3);
+  border: 1px solid #CCC;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  overflow: hidden;
+
+  &-heading {
+    padding: map-get($spacers, 4);
+    border-bottom: 1px solid #CCC;
+  }
+
+  &-body {
+    padding: map-get($spacers, 4);
+  }
+
+  &-footer {
+    border-top: 1px solid #CCC;
+    padding: map-get($spacers, 4);
+  }
+
+  @each $color, $value in $colors {
+    &-#{$color} {
+      border-color: lighten($value, 20%);
+      box-shadow: 0 0 map-get($spacers, 3) rgba($value, .2),
+      0 0 map-get($spacers, 4) rgba($value, .1);
+
+      & > .card-heading {
+        background-color: $value;
+        color: #FFF;
+      }
+
+      & > .card-footer {
+        border-color: lighten($value, 20%);
+      }
+
+    }
+  }
+}

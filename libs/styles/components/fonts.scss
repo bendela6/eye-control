@@ -1,0 +1,7 @@
+
+
+@each $weight in $font-weights {
+  .font-#{$weight} {
+    font-weight: $weight;
+  }
+}

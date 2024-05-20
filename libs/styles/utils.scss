@@ -1,0 +1,5 @@
+@use 'sass:math';
+
+@function size($pow) {
+  @return math.div(math.pow(2, $pow), 16) * 1rem;
+}

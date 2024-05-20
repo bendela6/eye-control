@@ -1,0 +1,17 @@
+@each $color, $value in $colors {
+  .text-#{$color} {
+    color: $value;
+  }
+}
+
+@each $color, $value in $grey-colors {
+  .text-grey-#{$color} {
+    color: $value;
+  }
+}
+
+@each $size, $value in $font-sizes {
+  .text-#{$size} {
+    font-size: $value;
+  }
+}

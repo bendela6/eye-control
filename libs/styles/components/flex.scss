@@ -1,0 +1,30 @@
+.flex {
+  display: flex;
+}
+
+@each $direction, $value in $flex-directions {
+  .flex-#{$direction} {
+    flex-direction: $value;
+  }
+}
+
+@each $alignment, $value in $flex-alignments {
+  .items-#{$alignment} {
+    align-items: $value;
+  }
+  .justify-#{$alignment} {
+    justify-content: $value;
+  }
+}
+
+@each $name, $value in $spacers {
+  .gap-#{$name} {
+    gap: $value;
+  }
+  .gap-x-#{$name} {
+    column-gap: $value;
+  }
+  .gap-y-#{$name} {
+    row-gap: $value;
+  }
+}
