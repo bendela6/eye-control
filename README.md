@@ -25,5 +25,10 @@ Command will start the following services:
 - `client` - React client for displaying notifications
 - `admin` - React admin client for sending notifications
 
-[http://localhost:8080/](http://localhost:8080/) - client application to display notifications
-[http://localhost:8081/](http://localhost:8081/) - admin application to send notifications
+## Architecture
+![diagram](./diagram.png)
+
+## Usage
+
+##### [http://localhost:8080/](http://localhost:8080/) - client application to display notifications
+##### [http://localhost:8081/](http://localhost:8081/) - admin application to send notifications
